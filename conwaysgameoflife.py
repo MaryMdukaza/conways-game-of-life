@@ -7,3 +7,5 @@ dead_cells = "."
 #setting up the cell grid variables
 rows = 79
 columns = 20
+
+next_sim = {}
