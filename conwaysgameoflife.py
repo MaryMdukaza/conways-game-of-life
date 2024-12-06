@@ -69,3 +69,10 @@ while True:
                 next_sim[(x, y)] = living_cells # cell becomes alive
             else:
                 next_sim[(x, y)] = dead_cells # cell dies
+
+    # pause for a moment
+    try:
+        time.sleep(1)
+    except KeyboardInterrupt:
+        print("\nConway's Game of Life simulation stopped.")
+        sys.exit() # exit the program when Ctrl-C is pressed
