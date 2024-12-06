@@ -20,3 +20,17 @@ for x in range(columns):  # looping over the columns
             next_sim[(x, y)] = living_cells  # add a living cell
         else:
             next_sim[(x, y)] = dead_cells  # add a dead cell
+
+# main loop
+while True:
+    # clear the screen
+    print("\n" * 50)
+    cells = copy.deepcopy(next_sim)
+
+    # print the cells
+    for y in range(rows):
+        for x in range(columns):
+            print(cells[(x, y)], end="")
+        print()
+    print("Press Ctrl-C to stop.")
+    
