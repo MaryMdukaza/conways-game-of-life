@@ -60,4 +60,12 @@ while True:
             if cells[(x, below)] == living_cells:
                 num_neighbors += 1 #bottom neighbor is alive
             if cells[(right, below)] == living_cells:
-                num_neighbors += 1 #bottom right neighbor is alive 
+                num_neighbors += 1 #bottom right neighbor is alive
+
+            # set cell based on Conway's Game of Life rules
+            if cells[(x, y)] == living_cells and (num_neighbors == 2 or num_neighbors == 3):
+                next_sim[(x, y)] = living_cells # cell stays alive
+            elif cells[(x, y)] == dead_cells and num_neighbors == 3:
+                next_sim[(x, y)] = living_cells # cell becomes alive
+            else:
+                next_sim[(x, y)] = dead_cells # cell dies
