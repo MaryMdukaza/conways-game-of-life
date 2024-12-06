@@ -33,4 +33,31 @@ while True:
             print(cells[(x, y)], end="")
         print()
     print("Press Ctrl-C to stop.")
-    
+
+    # calculate the next simulation's cells based on current simulation's cells
+    for x in range(columns):
+        for y in range(rows):
+            # get the neighboring coordinates
+            left = (x - 1) % columns
+            right = (x + 1) % columns
+            above = (y - 1) % rows
+            below = (y + 1) % rows
+
+            # count the number of living neighbors
+            num_neighbors = 0
+            if cells[(left, above)] == living_cells:
+                num_neighbors += 1 #top left neighbor is alive
+            if cells[(x, above)] == living_cells:
+                num_neighbors += 1 #top neighbor is alive
+            if cells[(right, above)] == living_cells:
+                num_neighbors += 1 #top right neighbor is alive
+            if cells[(left, y)] == living_cells:
+                num_neighbors += 1 #left neighbor is alive
+            if cells[(right, y)] == living_cells:
+                num_neighbors += 1 #right neighbor is alive
+            if cells[(left, below)] == living_cells:
+                num_neighbors += 1 #bottom left neighbor is alive
+            if cells[(x, below)] == living_cells:
+                num_neighbors += 1 #bottom neighbor is alive
+            if cells[(right, below)] == living_cells:
+                num_neighbors += 1 #bottom right neighbor is alive 
