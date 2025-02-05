@@ -75,4 +75,5 @@ while True:
         time.sleep(1)
     except KeyboardInterrupt:
         print("\nConway's Game of Life simulation stopped.")
+        print("\nCoded with love by Mary")
         sys.exit() # exit the program when Ctrl-C is pressed
